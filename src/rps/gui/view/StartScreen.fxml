@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="mainPain" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.view.StartScreenController">
+   <children>
+      <MFXTextField fx:id="username" layoutX="195.0" layoutY="74.0" prefHeight="49.0" prefWidth="210.0" />
+      <ImageView fx:id="maleImg" fitHeight="70.0" fitWidth="70.0" layoutX="160.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="femaleImg" fitHeight="70.0" fitWidth="70.0" layoutX="265.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="otherImg" fitHeight="70.0" fitWidth="70.0" layoutX="370.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
+      <MFXButton fx:id="selectOne" layoutX="168.0" layoutY="234.0" />
+      <MFXButton fx:id="selectTwo" layoutX="273.0" layoutY="234.0" />
+      <MFXButton fx:id="selectThree" layoutX="378.0" layoutY="234.0" />
+   </children>
+</AnchorPane>
