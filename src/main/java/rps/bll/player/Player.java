@@ -17,11 +17,9 @@ public class Player implements IPlayer {
 
     private static final Random RANDOM = new Random();
     private int[][] markovChain;
-    private int nbThrows = 0;
-    private Move last = null;
 
-    private String name;
-    private PlayerType type;
+    private final String name;
+    private final PlayerType type;
 
     /**
      * @param name
@@ -65,7 +63,7 @@ public class Player implements IPlayer {
     public Move doMove(IGameState state) {
         //Historic data to analyze and decide next move...
         ArrayList<Result> results = (ArrayList<Result>) state.getHistoricResults();
-
+        Move last = null;
         Move choice = null;
         if (results.size() > 2) {
             if (results.get(results.size() - 1).getWinnerPlayer().getPlayerType() == PlayerType.Human) {
@@ -82,10 +80,8 @@ public class Player implements IPlayer {
         }
         //Implement better AI here...
 //        Move[] moves = Move.values();
-        Move AIChoice = nextMove(last);
-        nbThrows++;
 
-        return AIChoice;
+        return nextMove(last);
     }
 
     //The ordinal() function gives the position of the Move in its enum declaration
