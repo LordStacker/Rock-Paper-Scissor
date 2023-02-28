@@ -1,12 +1,12 @@
 .Paper{
     -fx-graphic: url(../icons/palm-of-hand.png);
     -fx-text-fill: transparent;
-
 }
 
 .Rock{
     -fx-graphic: url(../icons/raise-hand.png);
     -fx-text-fill: transparent;
+
 }
 .Scissors{
     -fx-graphic: url(../icons/scissors.png);

@@ -7,12 +7,15 @@ import javafx.fxml.Initializable;
 
 import java.io.File;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import io.github.palexdev.materialfx.controls.*;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import rps.bll.game.GameManager;
 import rps.bll.player.IPlayer;
+import rps.bll.player.Player;
+import rps.bll.player.PlayerType;
 
 /**
  *
@@ -33,10 +36,14 @@ public class GameViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        scorePlayer.setText("Score: " + 0);
-        scoreBot.setText("Score: " + 0);
-        playerName.setText("warmish");
-        botName.setText("Terminator");
+        bot = new Player(getRandomBotName(), PlayerType.AI);
+        //TODO BRING THE NAME FROM FIRST FXML
+        player = new Player("Nicola", PlayerType.Human);
+        botName.setText(bot.getPlayerName());
+    }
+    private String getRandomBotName() {
+        String[] botNames = new String[] {"Terminator", "Vegeta", "Patrik Upset", "Jeppe", "Hola", "Mr.Robot", "Ni Hao"};
+        return botNames[new Random().nextInt(botNames.length - 1)];
     }
 
 }
