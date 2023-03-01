@@ -5,6 +5,7 @@ import rps.bll.game.*;
 
 //Java imports
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -64,23 +65,22 @@ public class Player implements IPlayer {
         //Historic data to analyze and decide next move...
         ArrayList<Result> results = (ArrayList<Result>) state.getHistoricResults();
         Move last = null;
-        Move choice = null;
-        if (results.size() > 2) {
+        Move lastPair = null;
+        if (results.size() > 1) {
             if (results.get(results.size() - 1).getWinnerPlayer().getPlayerType() == PlayerType.Human) {
-                choice = results.get(results.size() - 1).getWinnerMove();
+                last = results.get(results.size() - 1).getWinnerMove();
             } else {
-                choice = results.get(results.size() - 1).getLoserMove();
+                last = results.get(results.size() - 1).getLoserMove();
             }
             if (results.get(results.size() - 2).getWinnerPlayer().getPlayerType() == PlayerType.Human) {
-                last = results.get(results.size() - 2).getWinnerMove();
+                lastPair = results.get(results.size() - 2).getWinnerMove();
             } else {
-                last = results.get(results.size() - 2).getLoserMove();
+                lastPair = results.get(results.size() - 2).getLoserMove();
             }
-            updateMarkovChain(last, choice);
+            updateMarkovChain(lastPair, last);
         }
         //Implement better AI here...
-//        Move[] moves = Move.values();
-
+        System.out.println(Arrays.deepToString(markovChain));
         return nextMove(last);
     }
 
@@ -97,10 +97,9 @@ public class Player implements IPlayer {
         //Predicting next Move chosen by the user - reading data in our Markov chain/matrix
         //Done by looking into our previous Move
         int nextIndex = 0;
+        int prevIndex = prev.ordinal();
 
         for (int i = 0; i < Move.values().length; i++) {
-            int prevIndex = prev.ordinal();
-
             if (markovChain[prevIndex][i] > markovChain[prevIndex][nextIndex]) {
                 nextIndex = i;
             }
@@ -109,19 +108,18 @@ public class Player implements IPlayer {
         //Next Move played by the user is in nextIndex
         Move predictedNext = Move.values()[nextIndex];
 
-        //Choosing amongst Moves for which this next Move would lose
-        List<Move> losesTo = losesTo(predictedNext);
-        return losesTo.get(RANDOM.nextInt(losesTo.size()));
+        //Choosing the move for which this next Move would lose
+        return losesTo(predictedNext);
     }
 
-    private List<Move> losesTo(Move move) {
-        List<Move> losesTo = new ArrayList<>();
+    private Move losesTo(Move move) {
+        Move losesTo = null;
         if (move == Move.Rock) {
-            losesTo.add(Move.Paper);
+            losesTo = Move.Paper;
         } else if (move == Move.Paper) {
-            losesTo.add(Move.Scissor);
+            losesTo = Move.Scissor;
         } else if (move == Move.Scissor) {
-            losesTo.add(Move.Rock);
+            losesTo = Move.Rock;
         }
         return losesTo;
     }
