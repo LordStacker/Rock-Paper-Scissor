@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/StylesGen.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
    <children>
-      <Label layoutX="86.0" layoutY="190.0" text="Now you can start to build the GUI and implement an awesome game">
+      <ImageView fx:id="imgBot" fitHeight="100.0" fitWidth="100.0" layoutX="486.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgPlayer" fitHeight="100.0" fitWidth="100.0" layoutX="14.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <MFXButton fx:id="btnPaper" layoutX="269.0" layoutY="297.0" onAction="#paperSelection" prefHeight="40.0" prefWidth="0.0" styleClass="Paper" text="P" />
+      <MFXButton fx:id="btnRock" layoutX="159.0" layoutY="297.0" onAction="#rockSelection" prefHeight="40.0" prefWidth="28.0" styleClass="Rock" text="R" />
+      <MFXButton fx:id="btnScissors" layoutX="370.0" layoutY="297.0" onAction="#scissorsSelection" prefHeight="40.0" prefWidth="0.0" styleClass="Scissors" text="S" />
+      <Label fx:id="playerName" layoutX="50.0" layoutY="261.0" text="Label" />
+      <Label fx:id="botName" layoutX="522.0" layoutY="261.0" text="Label" />
+      <Label fx:id="scorePlayer" layoutX="50.0" layoutY="14.0" text="Label" />
+      <Label fx:id="scoreBot" layoutX="522.0" layoutY="14.0" text="Label" />
+      <ImageView fx:id="imgPlayerMove" fitHeight="100.0" fitWidth="100.0" layoutX="171.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgBotMove" fitHeight="100.0" fitWidth="100.0" layoutX="332.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="214.0" layoutY="11.0" prefHeight="41.0" prefWidth="172.0" text="Rock, Paper, Scissors">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Label>
    </children>
