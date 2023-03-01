@@ -16,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import rps.Main;
 import rps.bll.game.GameManager;
+import rps.bll.game.Move;
 import rps.bll.player.IPlayer;
 import rps.bll.player.Player;
 import rps.bll.player.PlayerType;
@@ -43,23 +44,22 @@ public class GameViewController implements Initializable {
         //TODO BRING THE NAME FROM FIRST FXML
         player = new Player(playerName.getText(), PlayerType.Human);
         botName.setText(bot.getPlayerName());
-        System.out.println(player);
     }
 
     public void setHumanName(String userName){
         playerName.setText(userName);
     }
-    private void imageSelection(String selection){
-        if(selection != null){
-            if(selection == "Scissors"){
+    private void imageSelection(Move move){
+        if(move != null){
+            if(move == Move.Scissor){
                 Image img = new Image(Main.class.getResource("icons/scissors.png").toExternalForm());
                 imgPlayerMove.setImage(img);
             }
-            if(selection == "Rock"){
+            if(move == Move.Rock){
                 Image img = new Image(Main.class.getResource("icons/raise-hand.png").toExternalForm());
                 imgPlayerMove.setImage(img);
             }
-            if(selection == "Paper"){
+            if(move == Move.Paper){
                 Image img = new Image(Main.class.getResource("icons/palm-of-hand.png").toExternalForm());
                 imgPlayerMove.setImage(img);
             }
@@ -68,17 +68,17 @@ public class GameViewController implements Initializable {
 
     @FXML
     private void rockSelection(ActionEvent actionEvent){
-        String selection = "Rock";
+        Move selection = Move.Rock;
         imageSelection(selection);
     }
     @FXML
     private void paperSelection(ActionEvent actionEvent){
-        String selection = "Paper";
+        Move selection = Move.Paper;
         imageSelection(selection);
     }
     @FXML
     private void scissorsSelection(ActionEvent actionEvent){
-        String selection = "Scissors";
+        Move selection = Move.Scissor;
         imageSelection(selection);
     }
 
