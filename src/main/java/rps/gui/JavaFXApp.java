@@ -6,6 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import rps.Main;
+
+import java.net.URL;
 
 /**
  * JavaFX implementation of the RPS game
@@ -20,8 +23,7 @@ public class JavaFXApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("/rps/gui/view/GameView.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("view/GameView.fxml"));
         stage.setTitle("Welcome to the not-implemented Rock-Paper-Scissor game!");
         stage.setScene(new Scene(root));
         stage.show();
