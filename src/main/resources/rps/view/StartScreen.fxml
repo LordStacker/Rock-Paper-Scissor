@@ -4,9 +4,9 @@
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="mainPain" prefHeight="304.0" prefWidth="421.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.StartScreenController">
+<AnchorPane fx:id="mainPain" prefHeight="304.0" prefWidth="421.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.StartScreenController">
    <children>
-      <MFXButton fx:id="submitInfo" layoutX="189.0" layoutY="221.0" onAction="#openMainStage" prefHeight="23.0" prefWidth="70.0" text="Ok" />
+      <MFXButton fx:id="submitInfo" defaultButton="true" layoutX="189.0" layoutY="221.0" onAction="#openMainStage" prefHeight="23.0" prefWidth="70.0" text="Ok" />
       <MFXTextField fx:id="playerInput" floatMode="BORDER" layoutX="101.0" layoutY="127.0" prefHeight="50.0" prefWidth="245.0" promptText="Player Name" />
    </children>
 </AnchorPane>

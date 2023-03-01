@@ -1,12 +1,12 @@
 package rps.bll.player;
 
 //Project imports
-import rps.bll.game.*;
 
-//Java imports
+import rps.bll.game.IGameState;
+import rps.bll.game.Move;
+import rps.bll.game.Result;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -79,8 +79,7 @@ public class Player implements IPlayer {
             }
             updateMarkovChain(lastPair, last);
         }
-        //Implement better AI here...
-        System.out.println(Arrays.deepToString(markovChain));
+        //Implemented better AI here...
         return nextMove(last);
     }
 
