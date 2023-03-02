@@ -87,6 +87,7 @@ public class StartScreenController implements Initializable {
                 gameViewController.setHumanName(playerInput.getText());
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
+                stage.setResizable(false);
                 stage.show();
                 Stage startStage = (Stage) mainPain.getScene().getWindow();
                 startStage.close();
