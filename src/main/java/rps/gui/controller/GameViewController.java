@@ -31,7 +31,7 @@ public class GameViewController implements Initializable {
     @FXML
     private Label scorePlayer, scoreBot, playerName, botName;
     @FXML
-    private ImageView imgPlayer, imgPlayerMove, imgBotMove, imgBot;
+    private ImageView imgPlayer, imgPlayerMove, imgBotMove, imgBot, imgTitle;
     @FXML
     private MFXButton btnRock, btnPaper, btnScissors;
     private IPlayer player;
@@ -48,7 +48,7 @@ public class GameViewController implements Initializable {
         player = new Player(playerName.getText(), PlayerType.Human);
         botName.setText(bot.getPlayerName());
         gameManager = new GameManager(player, bot);
-
+        //getPlayersImages(bot.getPlayerName()); The icon feature is temporarily removed
         scorePlayer.textProperty().bind(playerScore.asString());
         scoreBot.textProperty().bind(botScore.asString());
 
@@ -112,8 +112,21 @@ public class GameViewController implements Initializable {
 
 
     private String getRandomBotName() {
-        String[] botNames = new String[] {"Terminator", "Vegeta", "Patrik Upset", "Jeppe", "Mr.Robot", "Ni Hao"};
+        String[] botNames = new String[] {"Terminator", "Patrik", "Jeppe", "Goku"};
         return botNames[new Random().nextInt(botNames.length - 1)];
     }
+
+    /* The icon feature is temporarily removed
+    private void getPlayersImages(String botImage){
+        if(bot != null){
+            Image img  = new Image(Main.class.getResource("Images/"+ botImage +".jpg").toExternalForm());
+            imgBot.setImage(img);
+        }
+        Image pImg  = new Image(Main.class.getResource("Images/User.jpg").toExternalForm());
+        imgPlayer.setImage(pImg);
+        //Title Image
+        Image titleImg = new Image(Main.class.getResource("Images/RPS.png").toExternalForm());
+        imgTitle.setImage(titleImg);
+    }*/
 
 }
