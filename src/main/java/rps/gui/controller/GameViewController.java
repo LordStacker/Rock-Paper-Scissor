@@ -47,10 +47,11 @@ public class GameViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         bot = new Player(getRandomBotName(), PlayerType.AI);
-        //TODO BRING THE NAME FROM FIRST FXML
         player = new Player(playerName.getText(), PlayerType.Human);
         botName.setText(bot.getPlayerName());
         gameManager = new GameManager(player, bot);
+        getRandomBotImage(bot.getPlayerName());
+        //getRandomBotImage("Vegeta");
 
         scorePlayer.textProperty().bind(playerScore.asString());
         scoreBot.textProperty().bind(botScore.asString());
@@ -127,8 +128,15 @@ public class GameViewController implements Initializable {
 
 
     private String getRandomBotName() {
-        String[] botNames = new String[] {"Terminator", "Vegeta", "Patrik Upset", "Jeppe", "Mr.Robot", "Ni Hao"};
+        String[] botNames = new String[] {"Terminator", "Vegeta", "Patrik", "Jeppe", "MrRobot", "Goku"};
         return botNames[new Random().nextInt(botNames.length - 1)];
+    }
+
+    private void getRandomBotImage(String botImage){
+        if(bot != null){
+            Image img  = new Image(Main.class.getResource("Images/"+ botImage +".jpg").toExternalForm());
+            imgBot.setImage(img);
+        }
     }
 
 }
