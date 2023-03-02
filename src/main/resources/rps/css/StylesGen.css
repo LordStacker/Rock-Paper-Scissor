@@ -11,6 +11,3 @@
     -fx-graphic: url(../icons/scissors.png);
     -fx-text-fill: transparent;
 }
-.botImage{
-    -fx-border-image-width: full;
-}
