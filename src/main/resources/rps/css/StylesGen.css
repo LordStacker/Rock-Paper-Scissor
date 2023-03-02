@@ -6,7 +6,6 @@
 .Rock{
     -fx-graphic: url(../icons/raise-hand.png);
     -fx-text-fill: transparent;
-
 }
 .Scissors{
     -fx-graphic: url(../icons/scissors.png);
