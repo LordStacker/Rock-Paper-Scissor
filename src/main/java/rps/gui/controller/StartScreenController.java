@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -30,6 +32,9 @@ public class StartScreenController implements Initializable {
     @FXML
     private MFXTextField playerInput;
 
+    @FXML
+    private ImageView imgIntro;
+
 
 
 
@@ -40,13 +45,14 @@ public class StartScreenController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
     @FXML
     private void openMainStage(ActionEvent actionEvent){
         try{
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("view/GameView.fxml"));
             Parent root = (Parent) loader.load();
+            //Image introImg = new Image(Main.class.getResource("Images/RPS.png").toExternalForm());
+            //imgIntro.setImage(introImg);
 
             GameViewController gameViewController = loader.getController();
             gameViewController.setHumanName(playerInput.getText());
@@ -55,6 +61,7 @@ public class StartScreenController implements Initializable {
             stage.show();
             Stage startStage = (Stage) mainPain.getScene().getWindow();
             startStage.close();
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);
