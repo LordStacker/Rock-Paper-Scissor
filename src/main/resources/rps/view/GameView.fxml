@@ -2,25 +2,30 @@
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/StylesGen.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/StylesGen.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
    <children>
-      <ImageView fx:id="imgBot" fitHeight="197.0" fitWidth="138.0" layoutX="450.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true"/>
+      <AnchorPane prefHeight="115.0" prefWidth="600.0" styleClass="WindowTopBox">
+         <children>
+            <Label layoutX="156.0" layoutY="44.0" text="ULTIMATE ROCK PAPER SCISSORS">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerName" layoutX="78.0" layoutY="21.0" styleClass="Player-Name" text="Label" />
+            <Label fx:id="scorePlayer" layoutX="78.0" layoutY="48.0" text="Label" />
+            <Label fx:id="botName" layoutX="492.0" layoutY="18.0" styleClass="AI-Name" text="Label" />
+            <Label fx:id="scoreBot" layoutX="492.0" layoutY="45.0" text="Label" />
+         </children></AnchorPane>
+      <ImageView fx:id="imgBot" fitHeight="100.0" fitWidth="100.0" layoutX="486.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="imgPlayer" fitHeight="100.0" fitWidth="100.0" layoutX="14.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
-      <MFXButton fx:id="btnPaper" layoutX="269.0" layoutY="297.0" onAction="#paperSelection" prefHeight="40.0" prefWidth="0.0" styleClass="Paper" text="P" />
+      <MFXButton fx:id="btnPaper" layoutX="270.0" layoutY="297.0" onAction="#paperSelection" prefHeight="40.0" prefWidth="59.0" styleClass="Paper" text="P" />
       <MFXButton fx:id="btnRock" layoutX="159.0" layoutY="297.0" onAction="#rockSelection" prefHeight="40.0" prefWidth="28.0" styleClass="Rock" text="R" />
       <MFXButton fx:id="btnScissors" layoutX="370.0" layoutY="297.0" onAction="#scissorsSelection" prefHeight="40.0" prefWidth="0.0" styleClass="Scissors" text="S" />
-      <Label fx:id="playerName" layoutX="50.0" layoutY="261.0" text="Label" />
-      <Label fx:id="botName" layoutX="522.0" layoutY="261.0" text="Label" />
-      <Label fx:id="scorePlayer" layoutX="78.0" layoutY="14.0" text="Label" />
-      <Label fx:id="scoreBot" layoutX="508.0" layoutY="14.0" text="Label" />
       <ImageView fx:id="imgPlayerMove" fitHeight="100.0" fitWidth="100.0" layoutX="171.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="imgBotMove" fitHeight="100.0" fitWidth="100.0" layoutX="329.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" styleClass="botImage" />
-      <Label layoutX="38.0" layoutY="13.0" prefHeight="18.0" prefWidth="39.0" text="Score:" />
-      <Label layoutX="468.0" layoutY="13.0" prefHeight="18.0" prefWidth="39.0" text="Score:" />
-      <ImageView fx:id="imgTitle" styleClass="title" fitHeight="150.0" fitWidth="200.0" layoutX="189.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

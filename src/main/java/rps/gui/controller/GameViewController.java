@@ -48,7 +48,7 @@ public class GameViewController implements Initializable {
         player = new Player(playerName.getText(), PlayerType.Human);
         botName.setText(bot.getPlayerName());
         gameManager = new GameManager(player, bot);
-        getPlayersImages(bot.getPlayerName());
+        //getPlayersImages(bot.getPlayerName()); The icon feature is temporarily removed
         scorePlayer.textProperty().bind(playerScore.asString());
         scoreBot.textProperty().bind(botScore.asString());
 
@@ -116,6 +116,7 @@ public class GameViewController implements Initializable {
         return botNames[new Random().nextInt(botNames.length - 1)];
     }
 
+    /* The icon feature is temporarily removed
     private void getPlayersImages(String botImage){
         if(bot != null){
             Image img  = new Image(Main.class.getResource("Images/"+ botImage +".jpg").toExternalForm());
@@ -126,6 +127,6 @@ public class GameViewController implements Initializable {
         //Title Image
         Image titleImg = new Image(Main.class.getResource("Images/RPS.png").toExternalForm());
         imgTitle.setImage(titleImg);
-    }
+    }*/
 
 }
