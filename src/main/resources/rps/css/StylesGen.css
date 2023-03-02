@@ -1,13 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
+
+
+Label{
+    -fx-font-family: 'Inder', sans-serif;
+    -fx-text-fill: white;
+}
+
+.WindowTopBox{
+    -fx-background-color: #172734;
+}
+
 .Paper{
     -fx-graphic: url(../icons/palm-of-hand.png);
     -fx-text-fill: transparent;
+    -fx-background-color: transparent;
 }
 
 .Rock{
     -fx-graphic: url(../icons/raise-hand.png);
     -fx-text-fill: transparent;
+    -fx-background-color: transparent;
 }
 .Scissors{
     -fx-graphic: url(../icons/scissors.png);
     -fx-text-fill: transparent;
+    -fx-background-color: transparent;
 }
