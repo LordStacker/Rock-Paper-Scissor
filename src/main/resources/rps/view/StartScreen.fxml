@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="mainPain" prefHeight="304.0" prefWidth="421.0" styleClass="backgroundOne" stylesheets="@../css/StartScreenStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.StartScreenController">
+   <children>
+      <MFXButton fx:id="submitInfo" defaultButton="true" layoutX="176.0" layoutY="257.0" onAction="#openMainStage" prefHeight="23.0" prefWidth="70.0" text="Submit" />
+      <MFXTextField fx:id="playerInput" floatMode="BORDER" layoutX="88.0" layoutY="181.0" prefHeight="50.0" prefWidth="245.0" promptText="Player Name" />
+      <Pane fx:id="SecondPane" prefHeight="158.0" prefWidth="421.0" styleClass="backgroundTwo">
+         <children>
+            <ImageView fx:id="IntroImg" fitHeight="138.0" fitWidth="291.0" layoutX="59.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="IntroImg">
+               <image>
+                  <Image url="@../Images/RPS.png" />
+               </image></ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
