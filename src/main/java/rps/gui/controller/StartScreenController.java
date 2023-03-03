@@ -73,10 +73,7 @@ public class StartScreenController implements Initializable {
     private void openMainStage(ActionEvent actionEvent){
         if (playerInput.getText().isEmpty()){
             System.out.println("You shall not pass");
-            //TODO Make an alert asking for an username or name bla bla
-            //1 I need to make an alert
             showDefaultAlert("Please enter valid username", Alert.AlertType.WARNING);
-            //2 To notify that username is empty
 
         }
         else{
@@ -88,6 +85,7 @@ public class StartScreenController implements Initializable {
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
                 stage.setResizable(false);
+                stage.setTitle("Welcome to Rock-Paper-Scissor");
                 stage.show();
                 Stage startStage = (Stage) mainPain.getScene().getWindow();
                 startStage.close();
@@ -97,9 +95,5 @@ public class StartScreenController implements Initializable {
                 throw new RuntimeException(e);
             }
         }
-
-
-
-
     }
 }
